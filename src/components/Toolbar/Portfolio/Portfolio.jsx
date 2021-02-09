@@ -1,32 +1,22 @@
 import React from 'react';
 import Toolbar from '../Toolbar/Toolbar';
-
-const toolbarValue = [{
-    value: 'All'
-},{
-    value: 'Websites'
-}, {
-    value: 'Flayers'
-}, {
-    value: 'Business Cards'
-}]
-
-
-
-
-
+import { useState } from 'react';
 
 
 
 const Portfolio = () => {
-    
-    const changeType = (responce, value, item) => {
+    const [selectedItem, setSelectedItem] = useState('All');
+    const onSelectFilter = (item) => {
+        setSelectedItem(item.value);
+        if (item.value === selectedItem) {
+            item.classList.add('select');
+            return;
+        }
         
+
     }
     return (
-        <div className="toolbar-container">
-            {toolbarValue.map(options => (<Toolbar value={options.value} key={options.value} toolbarData={changeType}/>))}
-        </div>    
+        <Toolbar filters={["All", "Websites", "Flayers", "Business Cards"]} onSelectFilter={onSelectFilter} selected={selectedItem} />
     )
 }
 

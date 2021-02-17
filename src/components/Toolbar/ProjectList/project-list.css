@@ -1,4 +1,4 @@
-body {
+/* body {
     box-sizing: border-box;
 }
 
@@ -62,4 +62,31 @@ body {
     .wrapper {
         width: 1260px;
     }
+} */
+
+.projectlist {
+    margin: 1.5em 0;
+    padding: 0;
+    column-gap: 1.5em;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: .85em;
+    align-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 1000px;
+}
+
+.projectlist-item {
+    display: inline-block;
+    background: #fff;
+    padding: 0;
+    margin: 0 0 10px;
+
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+img {
+    width: 200px;
 }

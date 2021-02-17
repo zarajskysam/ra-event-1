@@ -14,11 +14,7 @@ const Portfolio = () => {
 
 
     const onSelectFilter = (item) => {
-        // if (item === selectedItem) {
-        //     filterImg('All');
-        //     setSelectedItem('All');
-        //     console.log(item);
-        // }
+
         if (item === selectedItem) {
             console.log(222);
             setSelectedItem('All');

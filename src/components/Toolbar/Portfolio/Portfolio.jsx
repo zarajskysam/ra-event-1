@@ -11,10 +11,21 @@ import { imgData } from '../img-data/img-data';
 const Portfolio = () => {
     const [selectedItem, setSelectedItem] = useState('All');
     const [imgArray, setImgArray] = useState(imgData);
-    const [styleButton, setStyleButton] = useState('unselect');
 
 
     const onSelectFilter = (item) => {
+        // if (item === selectedItem) {
+        //     filterImg('All');
+        //     setSelectedItem('All');
+        //     console.log(item);
+        // }
+        if (item === selectedItem) {
+            console.log(222);
+            setSelectedItem('All');
+            filterImg('All');
+            return;
+        }
+        setSelectedItem(item);
         filterImg(item);
     }
 
@@ -31,7 +42,7 @@ const Portfolio = () => {
 
     return (
         <div className="container">
-            <Toolbar buttonStyle={styleButton} filters={["All", "Websites", "Flayers", "Business Cards"]} onSelectFilter={onSelectFilter} selected={selectedItem} data-selected={selectedItem}/>
+            <Toolbar filters={["All", "Websites", "Flayers", "Business Cards"]} onSelectFilter={onSelectFilter} selected={selectedItem} data-selected={selectedItem}/>
             <ProjectList options={imgArray}/>
         </div>    
     )

@@ -5,10 +5,12 @@ import './toolbar.css';
 
 const Toolbar = (props) => {
     const { filters, selected, onSelectFilter, buttonStyle } = props;
+
+
     
     return (
         filters.map(filter => (
-            <button className={buttonStyle} onClick={() => onSelectFilter(filter)} selected={selected} data-selected={selected} key={filter} value={filter}>{filter}</button>
+            <button className={(filter === selected) ? "select" : "unselect"} onClick={() => onSelectFilter(filter)} selected={selected} data-selected={selected} key={filter} value={filter}>{filter}</button>
         ))
     )
 }
